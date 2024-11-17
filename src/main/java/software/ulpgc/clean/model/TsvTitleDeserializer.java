@@ -11,7 +11,8 @@ public class TsvTitleDeserializer implements TitleDeserializer{
     private Title deserialize(String[] split) {
         return new Title(
                 split[3],
-                split[8].equals("\\N") ? List.of() : Arrays.asList(split[8].split(","))
+                split[8].equals("\\N") ? List.of() : Arrays.asList(split[8].split(",")),
+                split[4].equals("1")
         );
     }
 }
